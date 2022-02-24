@@ -1,0 +1,73 @@
+SCHEMA hrmdb
+
+LAYOUT (TEXT="Association Operations", IMAGE="nemu.jfif")
+    HBOX
+        GROUP g1
+            GRID
+            {
+                ["       "] Unit Number:       [f1             ]
+
+                ["      "] Name of Association:[f2                         ]
+
+                ["             "] Position:    [f3             ]
+
+                ["       "] Responsability:    [f4                         ]
+
+
+            }
+            END
+        END
+
+    --   GROUP g2
+            GRID
+              {
+                [association                           ]
+              }
+            END
+ --       END
+    END
+END
+TABLES
+
+    association
+
+END
+
+ATTRIBUTES
+    IMAGE  association: association,  IMAGE="../association.png",SIZEPOLICY = DYNAMIC,
+                                   WIDTH = 40, HEIGHT = 40,AUTOSCALE, STRETCH= X;
+     EDIT f1 = association.unit_number,
+                    REQUIRED,
+                     AUTONEXT,
+                    PLACEHOLDER ="Enter unit number",
+                    STYLE ="my_style",
+                    COMMENT = %"Cannot be empty";
+    EDIT f2 =  association.association_name,
+                    PLACEHOLDER ="Enter Name",
+                     AUTONEXT,
+                    STYLE ="my_style";
+    EDIT    f3 = association.position,
+                    AUTONEXT,
+                    PLACEHOLDER ="Enter position",
+                    STYLE ="defaults",
+                    COMMENT = %" a number is prefered";
+    EDIT f4 = association.responsability,
+                  STYLE ="important",
+                   AUTONEXT,
+                   PLACEHOLDER ="responsability title";
+
+
+
+END
+
+INSTRUCTIONS
+ SCREEN RECORD
+
+    sr_association(
+               association.unit_number,
+               association.association_name,
+               association.position,
+               association.responsability
+
+);
+END

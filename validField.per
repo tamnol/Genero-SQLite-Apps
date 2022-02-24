@@ -1,0 +1,108 @@
+SCHEMA searchme
+
+LAYOUT (TEXT=" Validation Fields", STYLE ="important")
+    GRID
+    {
+     ["   "] Student ID[f1               ]
+     ["   "] Student Name[f12                                                ]
+     ["   "] Gender[f2        ]
+     ["   "] Date of Birth[f3            ]
+     ["   "] Address:[f4                 ] city[f5                           ]
+     ["   "] State[f6                    ] Zipcode[f7                        ]
+     ["   "] Date of Join[f8             ]
+     ["   "] phone[f9                    ]
+     ["   "] School ID[f10               ]
+     ["   "] Stauts[f11                  ]
+     ["   "] Picture[f13                 ]
+    }
+    END
+    END
+
+TABLES
+    student_mast
+END
+
+
+ ATTRIBUTES
+        EDIT f1 = student_mast.student_id,
+                    REQUIRED,
+                     AUTONEXT,
+                    PLACEHOLDER ="Enter ID",
+                    STYLE ="my_style",
+                    COMMENT = %"Cannot be empty";
+
+        EDIT f12 = student_mast.student_name,
+                    REQUIRED,
+                     AUTONEXT,
+                    PLACEHOLDER ="Enter NAME",
+                    STYLE ="my_style",
+                    COMMENT = %"Cannot be empty";
+        COMBOBOX  f2 = student_mast.gender , 
+                       ITEMS = ( (1,"Male"), (2, "Female")),
+                    PLACEHOLDER ="Choose Gender",
+                     AUTONEXT,
+                    STYLE ="important",
+                    COMMENT = %"Coose your Gender";
+
+        DATEEDIT  f3 = student_mast. date_of_birth,
+                    AUTONEXT,
+                   PLACEHOLDER ="Enter your Date of Birth",
+                   STYLE ="defaults",
+                    COMMENT = %"try to provide a correct date";
+         EDIT  f4 =  student_mast.address,
+                   STYLE ="info",
+                    AUTONEXT,
+                   PLACEHOLDER ="where do you live";
+        EDIT f5 = student_mast.city,
+                  STYLE ="important",
+                   AUTONEXT,
+                   PLACEHOLDER = "Enter your City";
+
+         EDIT  f6 = student_mast.state,
+                  STYLE ="important",
+                   AUTONEXT,
+                   PLACEHOLDER ="Enter your State";
+        EDIT f7 = student_mast.zip_code,
+                   AUTONEXT,
+                   STYLE ="defaults",
+                   PLACEHOLDER ="Enter Zipcode";
+        DATEEDIT    f8 = student_mast.date_of_join,
+                         AUTONEXT,
+                         FONTPITCH = VARIABLE,
+                        PLACEHOLDER ="Enter the date you join the company";
+
+          EDIT f9 = student_mast.phone_no,
+                   AUTONEXT,
+                   STYLE ="defaults",
+                   PLACEHOLDER ="Enter Phone";
+
+         EDIT  f10 = student_mast.school_id,
+                   STYLE ="defaults",
+                   PLACEHOLDER ="Enter School Info";
+
+        combobox  f11 = student_mast.student_status,
+                    ITEMS = ((1,"Single"), (2,"Married"), (3,"Divorce"),(4,"Widow")),
+                     STYLE ="defaults",
+                   PLACEHOLDER ="Check Status";
+        BUTTON f13 : open_file, IMAGE = "C:/Users/arman/OneDrive/Desktop/ArmandT/foot.png",
+                     STYLE="my_style";
+END
+
+INSTRUCTIONS
+
+SCREEN RECORD
+
+    sr_student_mast(
+                 student_mast.student_id,
+                student_mast.student_name,
+                     student_mast.gender,
+               student_mast.date_of_birth,
+                student_mast.city,
+                student_mast.state ,
+                student_mast.zip_code,
+                 student_mast.address,
+                 student_mast.phone_no,
+               student_mast.school_id,
+               student_mast.student_status,
+               student_mast.date_of_join);
+END

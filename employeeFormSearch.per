@@ -1,0 +1,81 @@
+SCHEMA searchme
+TOOLBAR DISPLAY_INFO (STYLE="my_style")
+ITEM add (TEXT="Add",comment= "provide employee information", IMAGE="+")
+ITEM  accept (TEXT="Send", IMAGE="accept")
+ITEM  find (TEXT="Search", IMAGE="find")
+END
+
+
+LAYOUT (TEXT="Employee Search Tool For Employee ID & Name", STYLE ="important")
+    Grid
+    {
+     ["   "] Employee Id:  [f1                ]
+     ["   "] Employee NAME:[f2                                    ]
+     ["   "] Date of Birth:[f3            ]
+     ["   "] City:         [f4                     ]
+     ["   "] State:        [f5                     ]
+     ["   "] Salary:       [f6                ]
+     ["   "] Date of Join: [f7            ]
+     ["   "] Department:   [f8                     ]
+    }
+    END
+    END
+
+TABLES
+    employee
+END
+
+ ATTRIBUTES
+        EDIT f1 = employee.id,
+                    REQUIRED,
+                     AUTONEXT,
+                    PLACEHOLDER ="Enter ID",
+                    STYLE ="my_style",
+                    COMMENT = %"Cannot be empty";
+        EDIT f2 = employee.ename,
+                    PLACEHOLDER ="Enter Full Name",
+                     AUTONEXT,
+                    STYLE ="my_style",
+                    COMMENT = %"Cannot be empty";
+        EDIT f3 = employee.dateOfbirth,
+                    AUTONEXT,
+                   PLACEHOLDER ="Enter your Date of Birth",
+                   STYLE ="defaults",
+                    COMMENT = %"try to provide a correct date";
+        EDIT f4 =  employee.city,
+                   STYLE ="info",
+                    AUTONEXT,
+                   PLACEHOLDER ="In which city do you live in";
+        EDIT f5 = employee.state,
+                  STYLE ="important",
+                   AUTONEXT,
+                   PLACEHOLDER ="Enter your State";
+        EDIT f6 = employee.salary,
+                   AUTONEXT,
+                   STYLE ="defaults",
+                   PLACEHOLDER ="Enter your Salary";
+        DATEEDIT f7 = employee.dateOfjoin,
+                         AUTONEXT,
+                        PLACEHOLDER ="Enter the date you join the company";
+         EDIT f8 = employee.department,
+                   STYLE ="defaults",
+                   PLACEHOLDER ="Enter the Name of the department
+                                      your are currently in";
+
+END
+
+INSTRUCTIONS
+
+SCREEN RECORD
+
+    sr_employee(
+                employee.id,
+                employee.ename,
+                employee.dateOfbirth,
+                employee.city,
+                employee.state,
+                employee.salary,
+                employee.dateOfjoin,
+                employee.department
+);
+END

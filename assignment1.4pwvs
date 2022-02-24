@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<WorkspaceViewState version="1.0">
+  <ExpandedNodes>
+    <Node path="assignment1.4pw" type="pm/main-project"/>
+    <Node path="assignment1.4pw/assign1" type="pm/group"/>
+    <Node path="assignment1.4pw/assign1/Databases" type="pm/library"/>
+    <Node path="assignment1.4pw/assign1/formApp" type="pm/application"/>
+    <Node path="assignment1.4pw/assign1/Library" type="pm/library"/>
+    <Node path="assignment1.4pw/assign1/personAddress" type="pm/application"/>
+    <Node path="assignment1.4pw/assign1/Test1" type="pm/application"/>
+    <Node path="assignment1.4pw/assign2" type="pm/group"/>
+    <Node path="assignment1.4pw/assign2/Apply" type="pm/application"/>
+    <Node path="assignment1.4pw/assign2/order_inputs" type="pm/application"/>
+    <Node path="assignment1.4pw/assign2/search_Info" type="pm/application"/>
+    <Node path="assignment1.4pw/assign2/validation_fieldsForm" type="pm/application"/>
+    <Node path="assignment1.4pw/assign3" type="pm/group"/>
+    <Node path="assignment1.4pw/assign3/Questionnaire" type="pm/application"/>
+  </ExpandedNodes>
+  <OpenDocuments>
+    <Document container="true" filePath="test1_code.4gl" locator="73:47:73:59" module="mod-ce3">
+      <Data name="8" value="CP1252"/>
+    </Document>
+    <Document container="true" filePath="employeeCode.4gl" locator="10:1:13:31" module="mod-ce3">
+      <Data name="8" value="CP1252"/>
+    </Document>
+    <Document container="true" filePath="searchme.4db" locator="" module="mod-db3"/>
+    <Document container="true" filePath="employeeFormSearch.per" locator="1:1" module="mod-ce3">
+      <Data name="8" value="CP1252"/>
+    </Document>
+    <Document container="true" filePath="employeeFormDisplay.per" locator="1:1" module="mod-ce3">
+      <Data name="8" value="CP1252"/>
+    </Document>
+  </OpenDocuments>
+  <CurrentDocument filePath="" module="mod-wp"/>
+</WorkspaceViewState>

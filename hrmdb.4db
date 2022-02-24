@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Schema gstVersion="31409" id="{94a6d422-2d86-4837-9306-c42ea4b4e98d}" version="4.0">
+  <AGSettings version="1.1">
+    <DynamicProperties version="2">
+      <DynamicProperty description="Associated label when generating form" initialValue="" isDefaultInherited="false" isHidden="false" label="Label" name="label" readOnly="false" type="TEXT"/>
+      <DynamicProperty description="Associated widget" editorInfo="contains:ButtonEdit|CheckBox|ComboBox|DateEdit|DateTimeEdit|Edit|FFImage|FFLabel|Field|Phantom|ProgressBar|RadioGroup|Slider|SpinEdit|TextEdit|TimeEdit" initialValue="Edit" isDefaultInherited="false" isHidden="false" label="Widget" name="widget" readOnly="false" type="ENUM"/>
+      <DynamicPropertyGroup collapsed="false" description="Formfied properties" label="Formfield" name="formfieldGroup" properties="label;widget"/>
+    </DynamicProperties>
+    <NodeInfos version="1">
+      <NodeInfo mimeType="db/column" properties="widget;label"/>
+    </NodeInfos>
+  </AGSettings>
+  <ExtractionSettings last="SQLite">
+    <ExtractionOptions casens="CaseSensitive" cvmeth="AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" ignerr="false" systab="true" type="SQLite"/>
+  </ExtractionSettings>
+  <Table active="true" name="amenity" status="U" uuid="db/table216">
+    <Column fglLength="4" fglType="2" name="unit_number" notNull="true" order="1" status="U" uuid="db/column1228"/>
+    <Column fglLength="55" fglType="201" name="amenity_name" notNull="false" order="2" status="U" uuid="db/column1230"/>
+    <Column fglLength="55" fglType="201" name="booked_by" notNull="false" order="3" status="U" uuid="db/column1232"/>
+    <Column fglLength="4" fglType="2" name="charges" notNull="false" order="4" status="U" uuid="db/column1234"/>
+    <Column fglLength="55" fglType="201" name="owner_type" notNull="false" order="5" status="U" uuid="db/column1236"/>
+    <Column fglLength="1642" fglType="10" name="timing" notNull="false" order="6" status="U" uuid="db/column1238"/>
+    <Column fglLength="4" fglType="7" name="on_date" notNull="false" order="7" status="U" uuid="db/column1240"/>
+    <Index indexColumns="unit_number" indexConstraint="unique" name="sqlite_autoindex_amenity_1" status="U" uuid="db/index216"/>
+  </Table>
+  <Table active="true" name="apartment" status="U" uuid="db/table218">
+    <Column fglLength="4" fglType="2" name="unit_number" notNull="true" order="1" status="U" uuid="db/column1242"/>
+    <Column fglLength="55" fglType="201" name="apartment_name" notNull="false" order="2" status="U" uuid="db/column1244"/>
+    <Column fglLength="55" fglType="201" name="block_Name" notNull="false" order="3" status="U" uuid="db/column1246"/>
+    <Column fglLength="4" fglType="2" name="floor_no" notNull="false" order="4" status="U" uuid="db/column1248"/>
+    <Column fglLength="1282" fglType="5" name="size_sqft" notNull="false" order="5" status="U" uuid="db/column1250"/>
+    <Index indexColumns="unit_number" indexConstraint="unique" name="sqlite_autoindex_apartment_1" status="U" uuid="db/index218"/>
+  </Table>
+  <Table active="true" name="association" status="U" uuid="db/table220">
+    <Column fglLength="4" fglType="2" name="unit_number" notNull="true" order="1" status="U" uuid="db/column1252"/>
+    <Column fglLength="55" fglType="201" name="association_name" notNull="false" order="2" status="U" uuid="db/column1254"/>
+    <Column fglLength="55" fglType="201" name="position" notNull="false" order="3" status="U" uuid="db/column1256"/>
+    <Column fglLength="55" fglType="201" name="responsability" notNull="false" order="4" status="U" uuid="db/column1258"/>
+    <Index indexColumns="unit_number" indexConstraint="unique" name="sqlite_autoindex_association_1" status="U" uuid="db/index220"/>
+  </Table>
+  <Table active="true" name="helpdesk" status="U" uuid="db/table222">
+    <Column fglLength="4" fglType="2" name="unit_number" notNull="true" order="1" status="U" uuid="db/column1260"/>
+    <Column fglLength="55" fglType="201" name="complaint_by" notNull="false" order="2" status="U" uuid="db/column1262"/>
+    <Column fglLength="55" fglType="201" name="completed_by" notNull="false" order="3" status="U" uuid="db/column1264"/>
+    <Column fglLength="55" fglType="201" name="attended_by" notNull="false" order="4" status="U" uuid="db/column1266"/>
+    <Column fglLength="55" fglType="201" name="issue" notNull="false" order="5" status="U" uuid="db/column1268"/>
+    <Column fglLength="4" fglType="7" name="issue_date" notNull="false" order="6" status="U" uuid="db/column1270"/>
+    <Column fglLength="55" fglType="201" name="status" notNull="false" order="7" status="U" uuid="db/column1272"/>
+    <Index indexColumns="unit_number" indexConstraint="unique" name="sqlite_autoindex_helpdesk_1" status="U" uuid="db/index222"/>
+  </Table>
+  <Table active="true" name="owner" status="U" uuid="db/table224">
+    <Column fglLength="4" fglType="2" name="unit_number" notNull="true" order="1" status="U" uuid="db/column1274"/>
+    <Column fglLength="55" fglType="201" name="owner_name" notNull="false" order="2" status="U" uuid="db/column1276"/>
+    <Column fglLength="55" fglType="201" name="address" notNull="false" order="3" status="U" uuid="db/column1278"/>
+    <Column fglLength="4" fglType="7" name="purchesed_on" notNull="false" order="4" status="U" uuid="db/column1280"/>
+    <Column fglLength="1282" fglType="5" name="size_sqft" notNull="false" order="5" status="U" uuid="db/column1282"/>
+    <Index indexColumns="unit_number" indexConstraint="primaryKey" name="sqlite_autoindex_owner_1" status="U" uuid="db/index224"/>
+  </Table>
+  <Table active="true" name="payment" status="U" uuid="db/table226">
+    <Column fglLength="4" fglType="2" name="unit_number" notNull="true" order="1" status="U" uuid="db/column1284"/>
+    <Column fglLength="4" fglType="7" name="paid_date" notNull="false" order="2" status="U" uuid="db/column1286"/>
+    <Column fglLength="55" fglType="201" name="paid_for" notNull="false" order="3" status="U" uuid="db/column1288"/>
+    <Column fglLength="55" fglType="201" name="paid_by" notNull="false" order="4" status="U" uuid="db/column1290"/>
+    <Column fglLength="55" fglType="201" name="collected_by" notNull="false" order="5" status="U" uuid="db/column1292"/>
+    <Column fglLength="4" fglType="2" name="Amount" notNull="false" order="6" status="U" uuid="db/column1294"/>
+    <Column fglLength="55" fglType="201" name="remarks" notNull="false" order="7" status="U" uuid="db/column1296"/>
+    <Index indexColumns="unit_number" indexConstraint="unique" name="sqlite_autoindex_payment_1" status="U" uuid="db/index226"/>
+  </Table>
+  <Table active="true" name="tenant" status="U" uuid="db/table228">
+    <Column fglLength="4" fglType="2" name="unit_number" notNull="true" order="1" status="U" uuid="db/column1298"/>
+    <Column fglLength="55" fglType="201" name="tenant_name" notNull="false" order="2" status="U" uuid="db/column1300"/>
+    <Column fglLength="55" fglType="201" name="address" notNull="false" order="3" status="U" uuid="db/column1302"/>
+    <Column fglLength="4" fglType="7" name="Join_on" notNull="false" order="4" status="U" uuid="db/column1304"/>
+    <Column fglLength="1282" fglType="5" name="size_sqft" notNull="false" order="5" status="U" uuid="db/column1306"/>
+    <Index indexColumns="unit_number" indexConstraint="unique" name="sqlite_autoindex_tenant_1" status="U" uuid="db/index228"/>
+  </Table>
+  <ForeignKey cascadeDelete="false" fkColumns="unit_number" fkRefColumns="unit_number" name="fk_tenant_owner_0" refTable="owner" status="U" table="tenant" uuid="db/foreignkey32"/>
+  <Views ActiveView="View-1" showLabels="true">
+    <View Name="View-1">
+      <Layout>
+        <![CDATA[AAAAAgAAABYAZABiAC8AdABhAGIAbABlADIAMgA4QIDMzNU8zM5AcYAACLAAAT+qn752yLQ/AQAAABYAZABiAC8AdABhAGIAbABlADIAMgAwQEQAAAfmZmdAbwAAD8AAAj+ok3S8an7/AQAAABYAZABiAC8AdABhAGIAbABlADIAMQA2QDgAAAYAAABAMAAACAAAAT+njU/fO2RfAQAAABYAZABiAC8AdABhAGIAbABlADIAMgA2QIW5maTEzM5AMAAABZmZmj+srAgxJul/AQAAABYAZABiAC8AdABhAGIAbABlADIAMgA0QHBmZm6ZmZtAb2ZmdhmZnD+Kn752yLQ8AQAAABYAZABiAC8AdABhAGIAbABlADIAMQA4QHJMzNXzMzRAJmZmcZmZmz94k3S8an76AQAAABYAZABiAC8AdABhAGIAbABlADIAMgAyQH8zM0MQAAJALMzM2zMzNT+k/fO2RaHPAQ==]]>
+      </Layout>
+    </View>
+  </Views>
+</Schema>

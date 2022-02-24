@@ -1,0 +1,66 @@
+SCHEMA hrmdb
+
+TOOLBAR
+ ITEM home ( IMAGE="../menu.jfif", TEXT="Home")
+ SEPARATOR
+ ITEM quit ( IMAGE="../exit_btn.jfif", TEXT="Quit")
+END
+
+LAYOUT (IMAGE="../menu.jfif", TEXT="Units Management", STYLE = "my_style")
+
+    HBOX
+
+       GRID
+        {
+
+                                                            [t1                                          ]
+
+
+
+                [owner                                  ]   [apartment                                   ]     [tenant                                 ]
+
+                          [f1               ]                          [f2                ]                            [f3                ]
+
+                [payment                                ]   [helpdesk                                    ]     [association                            ]
+
+                         [f4                ]                          [f5                ]                             [f6                ]
+
+                [amenity                                ]   [transaction                                  ]
+
+                         [f7                ]                         [f8                ]
+
+         }
+        END
+   END
+END
+
+ATTRIBUTES
+    LABEL t1: t1, TEXT= " YOUR RENT PROCESS STARTS HERE!!", SIZEPOLICY= DYNAMIC, FONTPITCH=VARIABLE, COLOR =cyan,
+                JUSTIFY= CENTER;
+    BUTTON owner: owner, IMAGE="../owner.jfif";
+    BUTTON f1: owner, Text="Owner", STYLE="my_style", SIZEPOLICY= DYNAMIC, STYLE="my_style";
+
+    BUTTON apartment: apartment, IMAGE="../apartment.jfif";
+    BUTTON  f2: apartment, Text="Apartment", STYLE="my_style", SIZEPOLICY= DYNAMIC, STYLE="my_style";
+
+    BUTTON tenant: tenant, IMAGE="../tenant.png";
+    BUTTON  f3: tenant, Text="Tenant", STYLE="my_style", SIZEPOLICY= DYNAMIC, STYLE="my_style";
+
+    BUTTON payment: payment, IMAGE="../payment.jfif";
+    BUTTON  f4: payment, Text="Payment", STYLE="my_style", SIZEPOLICY= DYNAMIC, STYLE="my_style";
+
+    BUTTON helpdesk: helpdesk, IMAGE="../helpdesk.jfif";
+    BUTTON  f5: payment, Text="Helpdesk",  STYLE="my_style", SIZEPOLICY= DYNAMIC, STYLE="my_style";
+
+    BUTTON association: association, IMAGE="../association.png";
+    BUTTON  f6: association, Text="Association",STYLE="my_style", SIZEPOLICY= DYNAMIC, STYLE="my_style";
+
+    BUTTON amenity: amenity, IMAGE="../amenity.jfif";
+    BUTTON  f7: amenity, Text="Amenity", STYLE="my_style", SIZEPOLICY= DYNAMIC, STYLE="my_style";
+
+    BUTTON transaction: transaction, IMAGE="../transaction.png";
+    BUTTON  f8: transaction, Text="Transaction", STYLE="my_style", SIZEPOLICY= DYNAMIC, STYLE="my_style";
+
+
+END
+

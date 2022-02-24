@@ -1,0 +1,92 @@
+SCHEMA hrmdb
+
+LAYOUT (TEXT="Payment Operations", IMAGE="nemu.jfif")
+   HBOX
+        GROUP g1
+            GRID
+            {
+                ["       "] Unit Number:    [f1                ]
+
+                ["               "] Paid On:[f2              ]
+
+                ["         "]  Why Payment?:[f3                         ]
+
+                ["                "] Payer?:[f4                         ]
+
+                ["                "] Payee?:[f5                         ]
+
+                ["             "] Amount Of:[f6                  ]
+                ["  "] Comment:[f7                                          ]
+
+            }
+            END
+        END
+
+    --   GROUP g2
+            GRID
+              {
+                [payment                          ]
+              }
+            END
+ --       END
+    END
+END
+TABLES
+
+  payment
+
+END
+
+ATTRIBUTES
+    IMAGE  payment: payment,  IMAGE="../payment.jfif",SIZEPOLICY = DYNAMIC,
+                                   WIDTH = 40, HEIGHT = 40,AUTOSCALE, STRETCH= X;
+     EDIT f1 = payment.unit_number,
+                    REQUIRED,
+                     AUTONEXT,
+                    PLACEHOLDER ="Enter unit number",
+                    STYLE ="my_style",
+                    COMMENT = %"Cannot be empty";
+    DATEEDIT  f2 =  payment.paid_date,
+                    FORMAT="mm/dd/yyyy",
+                    PLACEHOLDER ="mm/dd/yyyy",
+                     AUTONEXT,
+                    STYLE ="my_style";
+    EDIT    f3 = payment.paid_for,
+                    AUTONEXT,
+                    PLACEHOLDER ="why Payment",
+                    STYLE ="defaults",
+                    COMMENT = %" justify your payment ";
+    EDIT f4 = payment.paid_by,
+                  STYLE ="important",
+                   AUTONEXT,
+                   PLACEHOLDER ="payer";
+     EDIT f5 = payment.collected_by,
+                  STYLE ="important",
+                   AUTONEXT,
+                   PLACEHOLDER ="payee";
+
+    EDIT   f6 = payment.amount,
+                    PLACEHOLDER ="Amount",
+                    STYLE ="important";
+
+    EDIT    f7 = payment.remarks,
+                         COLOR= GREEN,
+                        STYLE ="defaults",
+                        PLACEHOLDER =" remarks";
+
+
+END
+
+INSTRUCTIONS
+ SCREEN RECORD
+
+    sr_payment(
+               payment.unit_number,
+               payment.paid_date,
+               payment.paid_for,
+               payment.paid_by,
+               payment.collected_by,
+               payment.amount,
+               payment.remarks
+);
+END

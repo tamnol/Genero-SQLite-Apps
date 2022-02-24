@@ -1,0 +1,16 @@
+PersonAddress^id^258^4^1^
+PersonAddress^first_name^457^50^2^
+PersonAddress^last_name^457^80^3^
+PersonAddress^phone_no^201^10^4^
+PersonAddress^zip_code^201^6^5^
+PersonAddress^email^201^100^6^
+PersonAddress^comment^12^56^7^
+person^P_id^457^50^1^
+person^p_name^457^250^2^
+person^p_state^201^30^3^
+person^p_city^201^30^4^
+person^p_dateOfbirth^7^4^5^
+person^p_zip_code^2^4^6^
+person^p_dateOfjoin^7^4^7^
+person^p_phone^201^20^8^
+person^P_status^201^20^9^

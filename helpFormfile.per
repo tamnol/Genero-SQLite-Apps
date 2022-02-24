@@ -1,0 +1,85 @@
+SCHEMA hrmdb
+
+LAYOUT (TEXT="Helpdesk Operations", IMAGE="nemu.jfif")
+   HBOX
+        GROUP g1
+            GRID
+            {
+                ["       "] Unit Number: [f1                ]
+
+                ["       "] Complaint By:[f2            ]
+
+                ["       "] Completed By:[f3            ]
+
+                ["       "] Attended By: [f4            ]
+                ["             "] Issue: [f5            ]
+
+                ["          "]Issue Date:[f6                ]
+                ["             "] Status:[f7               ]
+
+            }
+            END
+        END
+
+    --   GROUP g2
+            GRID
+              {
+                [helpdesk                          ]
+              }
+            END
+ --       END
+    END
+END
+TABLES
+
+  helpdesk
+
+END
+
+ATTRIBUTES
+    IMAGE  helpdesk: helpdesk,  IMAGE="../helpdesk.jfif",SIZEPOLICY = DYNAMIC,
+                                   WIDTH = 40, HEIGHT = 40,AUTOSCALE, STRETCH= X;
+     EDIT f1 = helpdesk.unit_number,
+                    REQUIRED,
+                     AUTONEXT,
+                    PLACEHOLDER ="Enter unit number",
+                    STYLE ="my_style",
+                    COMMENT = %"Cannot be empty";
+    EDIT    f2 = helpdesk.complaint_by,
+                    AUTONEXT,
+                    PLACEHOLDER ="Enter Name",
+                    STYLE ="defaults",
+                    COMMENT = %"----r";
+    EDIT f3 = helpdesk.completed_by,
+                  STYLE ="important",
+                   AUTONEXT,
+                   PLACEHOLDER ="Enter Name";
+     EDIT f4 = helpdesk.attended_by,
+                  STYLE ="important",
+                   AUTONEXT,
+                   PLACEHOLDER ="Enter ";
+     EDIT f5 = helpdesk.issue,
+                  STYLE ="important",
+                   AUTONEXT,
+                   PLACEHOLDER ="Enter issue";
+    DATEEDIT f6  = helpdesk.issue_date, STYLE ="defaults";
+    EDIT f7     = helpdesk.status,
+                  STYLE ="important",
+                   AUTONEXT,
+                   PLACEHOLDER ="Enter issue";
+
+END
+
+INSTRUCTIONS
+ SCREEN RECORD
+
+    sr_helpdesk(
+               helpdesk.unit_number,
+               helpdesk.complaint_by,
+               helpdesk.completed_by,
+               helpdesk.attended_by,
+               helpdesk.issue,
+               helpdesk.issue_date,
+               helpdesk.status
+);
+END

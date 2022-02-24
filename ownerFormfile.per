@@ -1,0 +1,81 @@
+SCHEMA hrmdb
+
+LAYOUT (TEXT="Owner Operations", IMAGE="nemu.jfif")
+    HBOX
+        GROUP g1
+            GRID
+            {
+
+                ["       "] Unit Number:  [f1               ]
+
+                ["      "] Owner Name:[f2                        ]
+
+                ["       "] Address:[f3                                     ]
+
+                ["       "] Purchase On: [f4           ]
+
+                ["   "] size(square feet):[f5                      ]
+
+            }
+            END
+        END
+
+
+            GRID
+              {
+                [owner                               ]
+              }
+            END
+
+    END
+END
+
+TABLES
+
+  owner
+
+END
+
+ATTRIBUTES
+    IMAGE  owner: owner,  IMAGE="../owner.jfif",SIZEPOLICY = DYNAMIC,
+                                   WIDTH = 50, HEIGHT = 50,AUTOSCALE, STRETCH= X;
+     EDIT f1 = owner.unit_number,
+                    REQUIRED,
+                     AUTONEXT,
+                    PLACEHOLDER ="Enter unit number",
+                    STYLE ="my_style",
+                    COMMENT = %"Cannot be empty";
+    EDIT f2 =  owner.owner_name,
+                    PLACEHOLDER ="owner Name",
+                    STYLE ="my_style";
+    EDIT    f3 = owner.address,
+                    PLACEHOLDER ="Enter your block name",
+                    STYLE ="defaults",
+                    COMMENT = %" your block name";
+    DATEEDIT f4 = owner.purchesed_on,
+                  STYLE ="important",
+                   AUTONEXT,
+                   PLACEHOLDER ="Enter floor number",
+                   COMMENT = %"has to be digits only";
+
+    EDIT   f5 = owner.size_sqft,
+                    AUTONEXT, FORMAT ="000.00",
+                    STYLE ="important",
+                    COMMENT = %"your apartment size";
+
+
+
+END
+
+INSTRUCTIONS
+ SCREEN RECORD
+
+    sr_owner(
+               owner.unit_number,
+               owner.owner_name,
+               owner.address,
+               owner.purchesed_on,
+               owner.size_sqft
+
+);
+END

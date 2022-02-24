@@ -1,0 +1,81 @@
+SCHEMA hrmdb
+
+LAYOUT (TEXT=" Apartment Operations", IMAGE="nemu.jfif")
+    HBOX
+        GROUP g1
+            GRID
+            {
+
+                ["       "] Unit Number:  [f1               ]
+
+                ["      "] Apartment Name:[f2                        ]
+
+                ["       "] Block Name:   [f3                        ]
+
+                ["       "] Floor Number: [f4           ]
+
+                ["   "] size(square feet):[f5           ]
+
+            }
+            END
+        END
+
+
+            GRID
+              {
+                [apartment                               ]
+              }
+            END
+
+    END
+END
+
+TABLES
+
+    apartment
+
+END
+
+ATTRIBUTES
+    IMAGE  apartment: apartment,  IMAGE="../apartment.jfif",SIZEPOLICY = DYNAMIC,
+                                   WIDTH = 50, HEIGHT = 50,AUTOSCALE, STRETCH= X;
+     EDIT f1 = apartment.unit_number,
+                    REQUIRED,
+                     AUTONEXT,
+                    PLACEHOLDER ="Enter unit number",
+                    STYLE ="my_style",
+                    COMMENT = %"Cannot be empty";
+    EDIT f2 =  apartment.apartment_name,
+                    PLACEHOLDER ="Your apartment Name",
+                    STYLE ="my_style";
+    EDIT    f3 = apartment.block_name,
+                    PLACEHOLDER ="Enter your block name",
+                    STYLE ="defaults",
+                    COMMENT = %" your block name";
+    EDIT f4 = apartment.floor_no,
+                  STYLE ="important",
+                   AUTONEXT,
+                   PLACEHOLDER ="Enter floor number",
+                   COMMENT = %"has to be digits only";
+
+    EDIT      f5 = apartment.size_sqft,
+                    AUTONEXT, format ="###.##",
+                    STYLE ="important",
+                    COMMENT = %"your apartment size";
+
+
+
+END
+
+INSTRUCTIONS
+ SCREEN RECORD
+
+    sr_apartment(
+               apartment.unit_number,
+               apartment.apartment_name,
+               apartment.block_name,
+               apartment.floor_no,
+               apartment.size_sqft
+
+);
+END

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ANSI_X3.4-1968"?>
+<StyleList>
+     <Style name="Edit.my_style:focus">
+        <StyleAttribute name="backgroundColor" value="yellow" />
+     </Style>
+      <Style name=".my_style:focus">
+         <StyleAttribute name="backgroundColor" value="blue" />
+      </Style>
+      <Style name="Edit.my_style">
+        <StyleAttribute name="backgroundColor" value="green" />
+     </Style>
+     <Style name="Edit:focus">
+        <StyleAttribute name="backgroundColor" value="red" />
+     </Style>
+     <Style name=":focus">
+        <StyleAttribute name="backgroundColor" value="cyan" />
+     </Style>
+
+     <Style name="*">
+        <StyleAttribute name="backgroundColor" value="orange" />
+     </Style >
+     <Style name="Label">
+     <StyleAttribute name="textColor" value="blue" />
+     <StyleAttribute name="fontFamily" value="sans-serif" />
+     </Style>
+     <Style name=".bigfont">
+        <StyleAttribute name="fontSize" value="large" />
+    </Style>
+
+</StyleList>

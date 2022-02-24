@@ -1,0 +1,89 @@
+SCHEMA hrmdb
+
+LAYOUT (TEXT="Amenity Operations", IMAGE="../nemu.jfif")
+    HBOX
+        GROUP g1
+            GRID
+            {
+                ["       "] Unit Number:    [f1                ]
+
+                ["       "] Name of Amenity:[f2                         ]
+
+                ["       "] Booking Day:    [f3             ]
+
+                ["       "] Amount Paid:    [f4            ]
+
+                ["       "] Owner Type:    [f5             ]
+
+                ["       "] Time:[f6                ]  ["  "] ON DATE:[f7                ]
+
+            }
+            END
+        END
+
+    --   GROUP g2
+            GRID
+              {
+                [amenity                           ]
+              }
+            END
+ --       END
+    END
+END
+TABLES
+
+    amenity
+
+END
+
+ATTRIBUTES
+    IMAGE  amenity: amenity,  IMAGE="../amenity.jfif",SIZEPOLICY = DYNAMIC,
+                                   WIDTH = 40, HEIGHT = 40,AUTOSCALE, STRETCH= X;
+     EDIT f1 = amenity.unit_number,
+                    REQUIRED,
+                     AUTONEXT,
+                    PLACEHOLDER ="Enter unit number",
+                    STYLE ="my_style",
+                    COMMENT = %"Cannot be empty";
+    EDIT f2 =  amenity.amenity_name,
+                    PLACEHOLDER ="Enter Name of Amenity",
+                     AUTONEXT,
+                    STYLE ="my_style";
+    EDIT    f3 = amenity.booked_by,
+                    AUTONEXT,
+                    PLACEHOLDER ="Enter booking day",
+                    STYLE ="defaults",
+                    COMMENT = %" 2 digits for the month and day and 4 digits for the year";
+    EDIT f4 = amenity.charges,
+                  STYLE ="important",
+                   AUTONEXT,
+                   PLACEHOLDER ="Enter the amount paid";
+
+    COMBOBOX  f5 = amenity.owner_type,
+                       ITEMS = ((1,"Male"),(2, "Female")),
+                    PLACEHOLDER ="Choose type",
+                    STYLE ="important";
+
+    DATETIMEEDIT    f6 = amenity.timing,
+                         AUTONEXT,
+                         COLOR= GREEN,
+                         REQUIRED,
+                        STYLE ="defaults",
+                        PLACEHOLDER ="Pickup your time";
+    DATEEDIT   f7 = amenity.on_date, STYLE ="defaults";
+
+END
+
+INSTRUCTIONS
+ SCREEN RECORD
+
+    sr_amenity(
+               amenity.unit_number,
+               amenity.amenity_name,
+               amenity.booked_by,
+               amenity.charges,
+               amenity.owner_Type,
+                amenity.timing,
+                amenity.on_date
+);
+END

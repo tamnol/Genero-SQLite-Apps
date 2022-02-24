@@ -1,0 +1,81 @@
+SCHEMA hrmdb
+
+LAYOUT (TEXT="Tenant Operations", IMAGE="nemu.jfif")
+    HBOX
+        GROUP g1
+            GRID
+            {
+
+                ["       "] Unit Number:  [f1               ]
+
+                ["      "] Tenan Name:[f2                        ]
+
+                ["       "] Address:[f3                                     ]
+
+                ["       "] Join On: [f4           ]
+
+                ["   "] size(square feet):[f5                        ]
+
+            }
+            END
+        END
+
+
+            GRID
+              {
+                [tenant                               ]
+              }
+            END
+
+    END
+END
+
+TABLES
+
+  tenant
+
+END
+
+ATTRIBUTES
+    IMAGE  tenant: tenant,  IMAGE="../tenant.png",SIZEPOLICY = DYNAMIC,
+                                   WIDTH = 50, HEIGHT = 50,AUTOSCALE, STRETCH= X;
+     EDIT f1 = tenant.unit_number,
+                    REQUIRED,
+                     AUTONEXT,
+                    PLACEHOLDER ="Enter unit number",
+                    STYLE ="my_style",
+                    COMMENT = %"Cannot be empty";
+    EDIT f2 =  tenant.tenant_name,
+                    PLACEHOLDER ="owner Name",
+                    STYLE ="my_style";
+    EDIT    f3 = tenant.address,
+                    PLACEHOLDER ="Enter your block name",
+                    STYLE ="defaults",
+                    COMMENT = %" your block name";
+    DATEEDIT f4 = tenant.join_on,
+                  STYLE ="important",
+                   AUTONEXT,
+                   PLACEHOLDER ="Enter",
+                   COMMENT = %"has to be digits only";
+
+    EDIT   f5 = tenant.size_sqft,
+                    AUTONEXT,FORMAT="000.00",
+                    STYLE ="important",
+                    COMMENT = %"your apartment size";
+
+
+
+END
+
+INSTRUCTIONS
+ SCREEN RECORD
+
+    sr_tenant(
+                tenant.unit_number,
+                tenant.tenant_name,
+                tenant.address,
+                tenant.join_on,
+                tenant.size_sqft
+
+);
+END

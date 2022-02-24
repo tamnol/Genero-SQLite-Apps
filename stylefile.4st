@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ANSI_X3.4-1968"?>
+<StyleList>
+
+      <Style name=".my_style:focus">
+         <StyleAttribute name="backgroundColor" value="white" />
+      </Style>
+
+     <Style name=":focus">
+        <StyleAttribute name="backgroundColor" value="cyan" />
+     </Style>
+
+     <Style name="label">
+     <StyleAttribute name="textColor" value="white" />
+     <StyleAttribute name="fontFamily" value="fantasy"  />
+     </Style>
+     <Style name=".bigfont">
+        <StyleAttribute name="fontSize" value="large" />
+    </Style>
+
+</StyleList>

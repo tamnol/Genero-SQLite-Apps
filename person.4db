@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Schema gstVersion="31409" id="{c9530f59-4886-4ed8-974d-01c20e6b950d}" version="4.0">
+  <AGSettings version="1.1">
+    <DynamicProperties version="2">
+      <DynamicProperty description="Associated label when generating form" initialValue="" isDefaultInherited="false" isHidden="false" label="Label" name="label" readOnly="false" type="TEXT"/>
+      <DynamicProperty description="Associated widget" editorInfo="contains:ButtonEdit|CheckBox|ComboBox|DateEdit|DateTimeEdit|Edit|FFImage|FFLabel|Field|Phantom|ProgressBar|RadioGroup|Slider|SpinEdit|TextEdit|TimeEdit" initialValue="Edit" isDefaultInherited="false" isHidden="false" label="Widget" name="widget" readOnly="false" type="ENUM"/>
+      <DynamicPropertyGroup collapsed="false" description="Formfied properties" label="Formfield" name="formfieldGroup" properties="label;widget"/>
+    </DynamicProperties>
+    <NodeInfos version="1">
+      <NodeInfo mimeType="db/column" properties="widget;label"/>
+    </NodeInfos>
+  </AGSettings>
+  <ExtractionSettings last="SQLite">
+    <ExtractionOptions casens="CaseSensitive" cvmeth="AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" ignerr="false" systab="true" type="SQLite"/>
+  </ExtractionSettings>
+  <Table active="true" name="PersonAddress" status="U" uuid="db/table6">
+    <Column fglLength="4" fglType="2" name="id" notNull="true" order="1" status="U" uuid="db/column34"/>
+    <Column fglLength="50" fglType="201" name="first_name" notNull="true" order="2" status="U" uuid="db/column36"/>
+    <Column fglLength="80" fglType="201" name="last_name" notNull="true" order="3" status="U" uuid="db/column38"/>
+    <Column fglLength="10" fglType="201" name="phone_no" notNull="false" order="4" status="U" uuid="db/column40"/>
+    <Column fglLength="6" fglType="201" name="zip_code" notNull="false" order="5" status="U" uuid="db/column42"/>
+    <Column fglLength="100" fglType="201" name="email" notNull="false" order="6" status="U" uuid="db/column44"/>
+    <Column fglLength="56" fglType="12" name="comment" notNull="false" order="7" status="U" uuid="db/column46"/>
+    <Index indexColumns="id" indexConstraint="primaryKey" name="primary_key_PersonAddress" status="U" uuid="db/index6"/>
+  </Table>
+  <Table active="true" name="person" status="U" uuid="db/table8">
+    <Column fglLength="50" fglType="201" name="P_id" notNull="true" order="1" status="U" uuid="db/column48"/>
+    <Column fglLength="250" fglType="201" name="p_name" notNull="true" order="2" status="U" uuid="db/column50"/>
+    <Column fglLength="30" fglType="201" name="p_state" notNull="false" order="3" status="U" uuid="db/column52"/>
+    <Column fglLength="30" fglType="201" name="p_city" notNull="false" order="4" status="U" uuid="db/column54"/>
+    <Column fglLength="4" fglType="7" name="p_dateOfbirth" notNull="false" order="5" status="U" uuid="db/column56"/>
+    <Column fglLength="4" fglType="2" name="p_zip_code" notNull="false" order="6" status="U" uuid="db/column58"/>
+    <Column fglLength="4" fglType="7" name="p_dateOfjoin" notNull="false" order="7" status="U" uuid="db/column60"/>
+    <Column fglLength="20" fglType="201" name="p_phone" notNull="false" order="8" status="U" uuid="db/column62"/>
+    <Column fglLength="20" fglType="201" name="P_status" notNull="false" order="9" status="U" uuid="db/column64"/>
+  </Table>
+</Schema>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ANSI_X3.4-1968"?>
+<ToolBar>
+   <ToolBarItem name="search" image="zoom" text="Search" />
+    <ToolBarItem name="add" image="../add.png" text="add" />
+   <ToolBarItem name="accept" image="../okay.png" />
+   <ToolBarItem name="cancel" image="../cancel.png"/>
+   <ToolBarSeparator/>
+    <ToolBarItem name="first" image="../first.png" text="First" />
+    <ToolBarItem name="previous" image="../prev.png" text="Previous" />
+    <ToolBarItem name="next" image="../next.png" text="Next" />
+    <ToolBarItem name="last" image="../last.png" text="Last" />
+    <ToolBarSeparator/>
+    <ToolBarItem name="update" image="../update.png" text="Update"  />
+    <ToolBarItem name="delete" image="../delete.png" text="delete"/>
+
+  <ToolBarSeparator/>
+  <ToolBarItem name="quit" image="../exit_btn.jfif" text="Exit" />
+</ToolBar>

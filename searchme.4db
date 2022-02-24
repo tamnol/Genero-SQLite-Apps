@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Schema gstVersion="31409" id="{5161b662-1426-4e2e-a855-b8ba703f8d42}" version="4.0">
+  <AGSettings version="1.1">
+    <DynamicProperties version="2">
+      <DynamicProperty description="Associated label when generating form" initialValue="" isDefaultInherited="false" isHidden="false" label="Label" name="label" readOnly="false" type="TEXT"/>
+      <DynamicProperty description="Associated widget" editorInfo="contains:ButtonEdit|CheckBox|ComboBox|DateEdit|DateTimeEdit|Edit|FFImage|FFLabel|Field|Phantom|ProgressBar|RadioGroup|Slider|SpinEdit|TextEdit|TimeEdit" initialValue="Edit" isDefaultInherited="false" isHidden="false" label="Widget" name="widget" readOnly="false" type="ENUM"/>
+      <DynamicPropertyGroup collapsed="false" description="Formfied properties" label="Formfield" name="formfieldGroup" properties="label;widget"/>
+    </DynamicProperties>
+    <NodeInfos version="1">
+      <NodeInfo mimeType="db/column" properties="widget;label"/>
+    </NodeInfos>
+  </AGSettings>
+  <ExtractionSettings last="SQLite">
+    <ExtractionOptions casens="CaseSensitive" cvmeth="AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" ignerr="false" systab="true" type="SQLite"/>
+  </ExtractionSettings>
+  <Table active="true" name="employee" status="U" uuid="db/table3">
+    <Column fglLength="4" fglType="2" name="id" notNull="true" order="1" status="U" uuid="db/column17"/>
+    <Column fglLength="250" fglType="201" name="ename" notNull="false" order="2" status="U" uuid="db/column37"/>
+    <Column fglLength="4" fglType="7" name="dateOfbirth" notNull="false" order="3" status="U" uuid="db/column19"/>
+    <Column fglLength="50" fglType="201" name="city" notNull="false" order="4" status="U" uuid="db/column20"/>
+    <Column fglLength="50" fglType="201" name="state" notNull="false" order="5" status="U" uuid="db/column21"/>
+    <Column fglLength="4" fglType="2" name="salary" notNull="false" order="6" status="U" uuid="db/column22"/>
+    <Column fglLength="4" fglType="7" name="dateOfjoin" notNull="false" order="7" status="U" uuid="db/column23"/>
+    <Column fglLength="50" fglType="201" name="department" notNull="false" order="8" status="U" uuid="db/column24"/>
+    <Index indexColumns="id" indexConstraint="unique" name="sqlite_autoindex_employee_1" status="U" uuid="db/index3"/>
+  </Table>
+  <Table active="true" name="student_mast" status="U" uuid="db/table4">
+    <Column fglLength="4" fglType="2" name="student_id" notNull="true" order="1" status="U" uuid="db/column25"/>
+    <Column fglLength="20" fglType="0" name="student_name" notNull="false" order="2" status="U" uuid="db/column26"/>
+    <Column fglLength="20" fglType="0" name="gender" notNull="false" order="3" status="U" uuid="db/column27"/>
+    <Column fglLength="4" fglType="7" name="date_of_birth" notNull="false" order="4" status="U" uuid="db/column28"/>
+    <Column fglLength="20" fglType="0" name="city" notNull="false" order="5" status="U" uuid="db/column29"/>
+    <Column fglLength="20" fglType="0" name="state" notNull="false" order="6" status="U" uuid="db/column30"/>
+    <Column fglLength="4" fglType="2" name="zip_code" notNull="false" order="7" status="U" uuid="db/column31"/>
+    <Column fglLength="20" fglType="0" name="address" notNull="false" order="8" status="U" uuid="db/column32"/>
+    <Column fglLength="4" fglType="2" name="phone_no" notNull="false" order="9" status="U" uuid="db/column33"/>
+    <Column fglLength="4" fglType="2" name="school_id" notNull="true" order="10" status="U" uuid="db/column34"/>
+    <Column fglLength="20" fglType="0" name="student_status" notNull="false" order="11" status="U" uuid="db/column35"/>
+    <Column fglLength="4" fglType="7" name="date_of_join" notNull="true" order="12" status="U" uuid="db/column36"/>
+    <Index indexColumns="student_id" indexConstraint="primaryKey" name="primary_key_student_mast" status="U" uuid="db/index2"/>
+  </Table>
+  <Views ActiveView="View-1" showLabels="true">
+    <View Name="View-1">
+      <Layout>
+        <![CDATA[AAAAAgAAABIAZABiAC8AdABhAGIAbABlADMAAAAAAAAAAEAwAAAEAAAAAAAAAAAAAAABAAAAEgBkAGIALwB0AGEAYgBsAGUANEBuAAAHgAAAQDAAAAQAAAAAAAAAAAAAAAE=]]>
+      </Layout>
+    </View>
+  </Views>
+</Schema>

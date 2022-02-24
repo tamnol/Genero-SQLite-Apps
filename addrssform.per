@@ -1,0 +1,76 @@
+SCHEMA person
+TOOLBAR t1
+
+ITEM show (TEXT = "display", IMAGE="display")
+ITEM  quit (TEXT = "Quit", IMAGE="Quit")
+ITEM accept (TEXT = "okay", IMAGE="ok")
+ITEM delete (TEXT = "delete", IMAGE="cancel")
+END
+
+LAYOUT (TEXT="person information form", STYLE ="important")
+    Grid
+    {
+     ["            "]  Peron Id:[f1]
+    ["              "] First NAME:[f2     ]
+    ["               "]Last Name: [f3          ]
+    ["               "]Phone Number:[f4                     ]
+    ["               "]Email Address:[f5                  ]
+     ["              "]Zipe Code:[f6             ]
+    ["               "]Comment:[f7                                          ]
+
+                                                                                                                               >
+
+    }
+    END
+    END
+
+TABLES
+    personAddress
+END
+
+ ATTRIBUTES
+        EDIT f1 = personAddress.id,
+                    REQUIRED,
+                    PLACEHOLDER ="Enter ID",
+                    STYLE ="my_style",
+                    COMMENT = %"Cannot be empty";
+        EDIT f2 = personAddress.first_name,
+                    PLACEHOLDER ="Enter FirstName",
+                    STYLE ="my_style",
+                    COMMENT = %"Cannot be empty";
+        EDIT f3 = personAddress.last_name,
+                   PLACEHOLDER ="Enter LastName",
+                   STYLE ="my_style",
+                    COMMENT = %"Cannot be empty";
+        EDIT f4 = personAddress.phone_no,
+                   STYLE ="my_style",
+                    FORMAT= "0000000000",
+                     AUTONEXT,
+                   PLACEHOLDER ="Enter 10 digits phone number";
+        EDIT f5 = personAddress.email,
+                  STYLE ="my_style",
+                   PLACEHOLDER ="Enter email";
+        EDIT f6 = personAddress.zip_code,
+                   FORMAT= "000000",
+                   AUTONEXT,
+                   STYLE ="my_style",
+                   PLACEHOLDER ="Enter your zip code";
+        TEXTEDIT f7 = personAddress.comment;
+
+
+END
+
+INSTRUCTIONS
+
+SCREEN RECORD
+
+    sr_personAdd(
+                personAddress.id,
+                personAddress.first_name,
+                personAddress.last_name,
+                personAddress.phone_no,
+                personAddress.email,
+                personAddress.zip_code,
+                personAddress.comment
+);
+END

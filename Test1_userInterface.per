@@ -1,0 +1,92 @@
+SCHEMA person
+
+
+LAYOUT (TEXT="person information form", STYLE ="my_style")
+
+       GRID {
+
+           <TABLE person_info                                                                                                                             >
+            Id            name           date_of_birth     state           city              zip_code        date_of_join   phone_no         status
+            [c1          |c2            |c3               |c4              |c5               |c6             |c7           |c8              |c9           ]
+            [c1          |c2            |c3               |c4              |c5               |c6             |c7           |c8              |c9           ]
+            [c1          |c2            |c3               |c4              |c5               |c6             |c7           |c8              |c9           ]
+            [c1          |c2            |c3               |c4              |c5               |c6             |c7           |c8              |c9           ]
+            [c1          |c2            |c3               |c4              |c5               |c6             |c7           |c8              |c9           ]
+            [c1          |c2            |c3               |c4              |c5               |c6             |c7           |c8              |c9           ]
+          }
+         END
+       END
+
+
+TABLES
+    person
+END
+
+ ATTRIBUTES
+        EDIT c1 = person.P_id,
+                    REQUIRED,
+                    PLACEHOLDER ="Enter ID",
+                    STYLE ="my_style",
+                    COMMENT ="Cannot be empty";
+        EDIT c2 = person.p_name,
+                    PLACEHOLDER ="Enter FirstName then LastName",
+                    STYLE ="my_style",
+                    COMMENT ="Cannot be empty";
+        EDIT c3 = person. p_dateOfbirth,
+                   FORMAT ="mm/dd/yyyy",
+                   STYLE ="my_style",
+                   COMMENT = %"Enter 2 digits for month, 2 for day and 4 for year";
+        EDIT c4 = person.p_state,
+                   STYLE ="my_style",
+                   PLACEHOLDER ="Enter name of your state";
+        EDIT c5 = person.p_city,
+                  STYLE ="my_style",
+                   PLACEHOLDER ="Enter name of your city";
+        EDIT c6 = person.p_zip_code,
+                   FORMAT= "000000",
+                   AUTONEXT,
+                   STYLE ="my_style",
+                   PLACEHOLDER ="Enter your zip code";
+        EDIT c7 = person. p_dateOfjoin,
+                    FORMAT ="mm/dd/yyyy",
+                    STYLE ="my_style",
+                    COMMENT = %"Enter 2 digits for month, 2 for day and 4 for year";
+        EDIT c8 = person.p_phone,
+                    FORMAT ="000-000-0000",
+                    STYLE ="my_style",
+                    AUTONEXT,
+                COMMENT = %"Do not enter your country code";
+        EDIT  c9 = person.P_status;
+
+
+END
+
+INSTRUCTIONS
+
+SCREEN RECORD
+
+    sr_person(
+                person.P_id,
+                person.p_name,
+                person.p_dateOfbirth,
+                person.p_state,
+                person.p_city,
+                person.p_zip_code,
+                person.p_dateOfjoin,
+                person.p_phone,
+                person.P_status
+    );
+END
+
+
+
+
+
+
+
+
+
+
+
+
+
